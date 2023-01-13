@@ -72,8 +72,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 
-
-docker run -e MYSQL_ROOT_PASSWORD=P@assw0rd -d -p 3307:3306 mysql
+## How To Start
 
 npm i -g @nestjs/cli
 
