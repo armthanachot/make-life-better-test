@@ -25,3 +25,5 @@ go to http://localhost:3000/api-docs for test api
 For import visitor CSV use /api/seminars/:seminarId/visitors (POST)
 
 For find visitor with filter use /api/seminars/:seminarId/visitors (GET)
+
+visitors.csv is a test file for import visitors
