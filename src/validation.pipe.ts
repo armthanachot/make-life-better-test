@@ -1,0 +1,14 @@
+import { responseMessages } from '@/utils/response';
+import { ArgumentMetadata, Injectable, PipeTransform, BadRequestException } from '@nestjs/common';
+import { StatusCodes } from 'http-status-codes';
+import { ObjectSchema } from 'joi'
+
+@Injectable()
+export class ValidationPipe implements PipeTransform {
+  constructor(private schema?: ObjectSchema) { }
+  transform(value: any, metadata?: ArgumentMetadata) {
+    const { error } = this.schema.validate(value)
+    if (error) throw new BadRequestException(responseMessages(StatusCodes.BAD_REQUEST, `Validation failed: ${error.message}`))
+    return value
+  }
+}
